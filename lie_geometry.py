@@ -41,7 +41,7 @@ def lie_to_plane(X):
     X_ /= nrm
     return X_[:,:-2]
 
-def recover_from_lie(X, atol=1-8):
+def recover_from_lie(X, atol=1e-8):
     point_msk = np.abs(X[:,-1]) < atol
     plane_msk = np.abs(X[:,-2]) < atol
     circl_msk = np.logical_not(point_msk)*np.logical_not(plane_msk)
